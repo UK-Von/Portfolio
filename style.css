@@ -269,6 +269,11 @@ color: var(--text-color);
         border-radius: .5rem;
         padding: .8rem .5rem 1.1rem;
         text-align: center;
+        transition: .3s ease;
+    }
+    
+    .services-box .services-content:hover {
+        box-shadow: var(--box-shadow);
     }
 
     .services-content i {
@@ -278,4 +283,13 @@ color: var(--text-color);
 
     .services-content h3 {
         font-size: 1.1rem;
+    }
+
+    .services-content p {
+        margin: .2rem 0 .8rem;
+    }
+
+    .services-content .btn {
+        width: 8rem;
+        height: 2.5rem;
     }
