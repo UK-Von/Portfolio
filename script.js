@@ -103,12 +103,10 @@ document.querySelectorAll('.read-more').forEach(button => {
         const moreText = this.previousElementSibling.querySelector('.more-text');
         
         if (moreText.style.display === 'none' || moreText.style.display === '') {
-            moreText.style.display = 'block';
-            moreText.classList.add('float-in');
+            moreText.style.display = 'inline';
             this.textContent = 'Read Less';
         } else {
             moreText.style.display = 'none';
-            moreText.classList.remove('float-in');
             this.textContent = 'Read More';
         }
     });
