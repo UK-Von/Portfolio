@@ -65,3 +65,51 @@ backProfileBtn.onclick = () => {
         }, (index + 1) * 200 + 100)
     })
 }
+
+//animation
+const coverRight = document.querySelector('.cover.cover-right');
+const pageLeft = document.querySelector('.book-page.page-left');
+
+setTimeout(() => {
+    coverRight.classList.add('turn');
+}, 2100)
+
+setTimeout(() => {
+    coverRight.style.zIndex = -1;
+}, 2800)
+
+setTimeout(() => {
+    pageLeft.style.zIndex = 20;
+}, 3200)
+
+
+pages.forEach((_, index) => {
+    setTimeout(() => {
+        reverseIndex();
+        pages[pageNumber].classList.remove('turn');
+
+        setTimeout(() => {
+            reverseIndex();
+            pages[pageNumber].style.zIndex = 10 + index;
+        }, 500 )
+
+    }, (index + 1) * 200 + 2100)
+})
+
+
+document.querySelectorAll('.read-more').forEach(button => {
+    button.addEventListener('click', function(e) {
+        e.preventDefault(); // Prevent default anchor behavior
+        const moreText = this.previousElementSibling.querySelector('.more-text');
+        
+        if (moreText.style.display === 'none' || moreText.style.display === '') {
+            moreText.style.display = 'block';
+            moreText.classList.add('float-in');
+            this.textContent = 'Read Less';
+        } else {
+            moreText.style.display = 'none';
+            moreText.classList.remove('float-in');
+            this.textContent = 'Read More';
+        }
+    });
+});
