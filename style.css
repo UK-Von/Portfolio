@@ -488,16 +488,16 @@ overflow: hidden;
     top: -1.8rem;
     }
 
-    @media (max-width: 768px) {
-        .wrapper {
-            transform: none; /* Remove scaling for mobile */
-        }
+   @media (max-width: 768px) {
+    .wrapper {
+        transform: none; /* Remove scaling for mobile */
     }
-    
-    @media (max-width: 480px) {
-        /* Ensure no scaling here as well */
-        .wrapper {
-            transform: none;
-        }
+}
+
+@media (max-width: 480px) {
+    /* Ensure no scaling here as well */
+    .wrapper {
+        transform: none;
+    }
     }
     
