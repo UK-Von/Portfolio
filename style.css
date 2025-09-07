@@ -30,6 +30,7 @@ min-height:100vh;
 background: var(--bg-color);
 color: var(--text-color);
 overflow: hidden;
+padding-top: 2rem; /* <-- adjust this for the top gap */
 }
 
 .wrapper {
@@ -40,6 +41,12 @@ overflow: hidden;
     perspective: 250rem;
     animation: show-animate 2s forwards;
 }
+
+html {
+    transform: scale(0.75);         /* shrink everything */
+    transform-origin: top center;  /* scale from the top center */
+}
+
 
 @keyframes show-animate{
     0%,30%{
@@ -347,7 +354,7 @@ overflow: hidden;
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        width: 6rem;
+        width: 5.5rem;
         height: 5rem;
         border: var(--border);
         border-radius: .3rem;
@@ -487,4 +494,14 @@ overflow: hidden;
     transform: translateX(-50%) scale(1);
     top: -1.8rem;
     }
-    
+
+/* @media (max-width: 768px) {
+    .wrapper {
+        transform: none;
+    }
+}
+
+@media (max-width: 480px) {
+    .wrapper {
+        transform: none;
+    } */
