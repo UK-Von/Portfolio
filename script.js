@@ -111,3 +111,62 @@ document.querySelectorAll('.read-more').forEach(button => {
         }
     });
 });
+
+// Contact Form
+
+const contactForm = document.getElementById('contact-form');
+const formMessage = document.getElementById('form-message');
+
+contactForm.addEventListener('submit', async function(e) {
+
+    e.preventDefault();
+
+    const submitButton =
+        contactForm.querySelector('input[type="submit"]');
+
+    submitButton.value = "Sending...";
+    submitButton.disabled = true;
+
+    const formData = new FormData(contactForm);
+
+    try {
+
+        const response = await fetch(
+            "https://formsubmit.co/ajax/vonurbis26@gmail.com",
+            {
+                method: "POST",
+                body: formData
+            }
+        );
+
+        if (response.ok) {
+
+            formMessage.textContent =
+                "Message sent successfully!";
+
+            formMessage.style.color = "green";
+
+            contactForm.reset();
+
+        } else {
+
+            formMessage.textContent =
+                "Something went wrong. Please try again.";
+
+            formMessage.style.color = "red";
+
+        }
+
+    } catch (error) {
+
+        formMessage.textContent =
+            "Unable to send message. Please try again.";
+
+        formMessage.style.color = "red";
+
+    }
+
+    submitButton.value = "Send Message";
+    submitButton.disabled = false;
+
+});
