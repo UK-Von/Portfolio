@@ -30,7 +30,7 @@ min-height:100vh;
 background: var(--bg-color);
 color: var(--text-color);
 overflow: hidden;
-padding-top: 2rem; /* <-- adjust this for the top gap */
+padding-top: 2.2rem; /* <-- adjust this for the top gap */
 }
 
 .wrapper {
@@ -495,13 +495,26 @@ html {
     top: -1.8rem;
     }
 
-/* @media (max-width: 768px) {
-    .wrapper {
+    /* PHONE ONLY */
+@media (max-width: 480px) {
+
+    html {
         transform: none;
     }
-}
 
-@media (max-width: 480px) {
+    body {
+        padding-top: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
     .wrapper {
-        transform: none;
-    } */
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%) scale(0.45);
+        transform-origin: center center;
+    }
+
+}
