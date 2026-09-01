@@ -495,7 +495,9 @@ html {
     top: -1.8rem;
     }
 
-    /* PHONE ONLY */
+/* =========================
+   PHONE ONLY
+   ========================= */
 @media (max-width: 480px) {
 
     html {
@@ -504,6 +506,7 @@ html {
 
     body {
         padding-top: 0;
+        overflow: hidden;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -511,10 +514,28 @@ html {
 
     .wrapper {
         position: absolute;
+        width: 66rem;
+        height: 45rem;
+
         left: 50%;
         top: 50%;
-        transform: translate(-50%, -50%) scale(0.45);
+
+        transform: translate(-50%, -50%) scale(0.35);
         transform-origin: center center;
+
+        animation: mobile-show-animate 2s forwards;
     }
 
+    @keyframes mobile-show-animate {
+
+        0%, 30% {
+            opacity: 0;
+            transform: translate(-50%, -50%) scale(0.35) rotate(-20deg);
+        }
+
+        100% {
+            opacity: 1;
+            transform: translate(-50%, -50%) scale(0.35) rotate(0deg);
+        }
+    }
 }
