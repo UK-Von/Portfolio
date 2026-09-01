@@ -139,21 +139,19 @@ contactForm.addEventListener('submit', async function(e) {
             }
         );
 
-if (response.ok) {
+        if (response.ok) {
 
-    formMessage.textContent =
-        "Message sent successfully!";
+            formMessage.textContent =
+                "Message sent successfully!";
 
-    formMessage.style.color = "green";
+            formMessage.style.color = "green";
 
-    contactForm.reset();
+            contactForm.reset();
 
-    // Remove message after 5 seconds
-    setTimeout(() => {
-        formMessage.textContent = "";
-    }, 5000);
-
-}
+            // Remove success message after 5 seconds
+            setTimeout(() => {
+                formMessage.textContent = "";
+            }, 5000);
 
         } else {
 
@@ -161,6 +159,11 @@ if (response.ok) {
                 "Something went wrong. Please try again.";
 
             formMessage.style.color = "red";
+
+            // Remove error message after 5 seconds
+            setTimeout(() => {
+                formMessage.textContent = "";
+            }, 5000);
 
         }
 
@@ -170,6 +173,11 @@ if (response.ok) {
             "Unable to send message. Please try again.";
 
         formMessage.style.color = "red";
+
+        // Remove error message after 5 seconds
+        setTimeout(() => {
+            formMessage.textContent = "";
+        }, 5000);
 
     }
 
