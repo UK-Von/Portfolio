@@ -139,14 +139,21 @@ contactForm.addEventListener('submit', async function(e) {
             }
         );
 
-        if (response.ok) {
+if (response.ok) {
 
-            formMessage.textContent =
-                "Message sent successfully!";
+    formMessage.textContent =
+        "Message sent successfully!";
 
-            formMessage.style.color = "green";
+    formMessage.style.color = "green";
 
-            contactForm.reset();
+    contactForm.reset();
+
+    // Remove message after 5 seconds
+    setTimeout(() => {
+        formMessage.textContent = "";
+    }, 5000);
+
+}
 
         } else {
 
